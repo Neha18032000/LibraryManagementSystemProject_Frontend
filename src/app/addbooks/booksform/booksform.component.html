@@ -1,0 +1,89 @@
+<div class="page-wrapper">
+
+  <!-- MENU SIDEBAR-->
+  <aside class="menu-sidebar d-none d-lg-block">
+      <!-- <div class="logo"> -->
+          <!-- <a href="#"> -->
+              <img src="assets/images/download.jpg" alt="XYZ Company" class="img-responsive" style="height: 70px;width: 200px;">
+          <!-- </a>
+      </div> -->
+      <div class="menu-sidebar-content js-scrollbar1">
+          <nav class="navbar-sidebar">
+              <ul class="list-unstyled navbar-list">
+                <li>
+                  <i class="fa fa-home" style='font-size:20px;color:red'><a href="http://localhost:4200/">Home</a></i>
+                </li>
+                  <li>
+                    <i class='fas fa-book' style='font-size:20px;color:red'><a href="bookslist">Add Books</a></i>
+                  </li>
+                  <li>
+                    <i  class='fas fa-users' style='font-size:20px;color:red'><a href="studentslist">Add Students</a></i>
+                  </li>
+                  <!-- <li>
+                    <i  class='fas fa-user-tie' style='font-size:20px;color:red'> <a href="#">Add Staff</a></i>
+                  </li> -->
+                  <li>
+                    <i  class='fas fa-book-reader' style='font-size:20px;color:red'>  <a href="issuebookform">Issue Book</a></i>
+                  </li>
+                  <li>
+                    <i  class='fas fa-book' style='font-size:20px;color:red'> <a href="returnbookform">Return Book</a></i>
+                </li>
+                <li>
+                  <i  class='fas fa-sign-out-alt' style='font-size:20px;color:red'> <a href="http://localhost:4200/login">LogOut</a></i>
+              </li>
+              </ul>
+          </nav>
+      </div>
+ </aside>
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+           
+            <form #spForm="ngForm" (ngSubmit)="onSubmit()">
+              <div *ngIf="books.id==0"><h1>Add Books</h1></div>
+              <div *ngIf="books.id>0"><h1>Update Books</h1></div>
+                <div class="form-group row">
+                    <label class ="col-sm-2 col-form-label">Book ID</label>
+                    <div class ="col-sm-10">
+                        <input type ="text" name="id" [(ngModel)]="books.id" />
+                       
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class ="col-sm-2 col-form-label">Book Name</label>
+                    <div class ="col-sm-10">
+                        <input type ="text" name="book_name"[(ngModel)]="books.book_name" />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class ="col-sm-2 col-form-label"> Author Name</label>
+                      <div class ="col-sm-10">
+                          <input type ="text" name="authorname"  [(ngModel)]="books.authorname"/>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                    <label class ="col-sm-2 col-form-label">Quantity</label>
+                    <div class ="col-sm-10">
+                        <input type ="text" name="quantity"  [(ngModel)]="books.quantity"/>
+                    </div>
+  
+                  </div>
+                  <div class="form-group row">
+                      <label class ="col-sm-2 col-form-label"> Price</label>
+                      <div class ="col-sm-10">
+                          <input type ="text" name="price" [(ngModel)]="books.price" />
+                      </div>
+                    </div>
+                    
+                    
+                    
+                    
+                  
+                    <div class="form-group row">
+                      <div class="col-sm-2"><button type ="submit"class="btn btn-info">Submit</button></div>
+                      <div class="col-sm-2"><button type="reset" class="btn btn-info" style="background-color: #ff4500">Reset</button></div>
+                    </div>
+                </form>
+  </div>
+  </div>
+  </div>

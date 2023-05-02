@@ -1,0 +1,77 @@
+<aside class="menu-sidebar d-none d-lg-block">
+    <!-- <div class="logo"> -->
+        <!-- <a href="#"> -->
+            <img src="assets/images/download.jpg" alt="XYZ Company" class="img-responsive" style="height: 70px;width: 200px;">
+<div class="menu-sidebar-content js-scrollbar1">
+    <nav class="navbar-sidebar">
+        <ul class="list-unstyled navbar-list">
+            <li>
+                <i class="fa fa-home" style='font-size:20px;color:red'><a href="http://localhost:4200/">Home</a></i>
+              </li>
+            <li>
+              <i class='fas fa-book' style='font-size:20px;color:red'><a href="bookslist">Add Books</a></i>
+            </li>
+            <li>
+              <i  class='fas fa-users' style='font-size:20px;color:red'><a href="studentslist">Add Students</a></i>
+            </li>
+            <!-- <li>
+              <i  class='fas fa-user-tie' style='font-size:20px;color:red'> <a href="#">Add Staff</a></i>
+            </li> -->
+            <li>
+              <i  class='fas fa-book-reader' style='font-size:20px;color:red'>  <a href="issuebookform">Issue Book</a></i>
+            </li>
+            <li>
+              <i  class='fas fa-book' style='font-size:20px;color:red'> <a href="returnbookform">Return Book</a></i>
+          </li>
+          <li>
+            <i  class='fas fa-sign-out-alt' style='font-size:20px;color:red'> <a href="http://localhost:4200/login">LogOut</a></i>
+        </li>
+        </ul>
+    </nav>
+</div>
+</aside>
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            
+            <div class="row">
+              <table class='table'>
+                <thead>
+                    <tr class='table-dark'>
+                        <th>Student Id</th>
+                        <th>Student Name</th>
+                        <th>Book Id</th>
+                        <th>Book Name</th>
+                        <th>Quantity</th>
+                        <th>Issue Date</th>
+                        <th>Return Data</th>
+                    </tr>
+            
+                </thead>
+                <tr >
+                    <td>1</td>
+                    <td>Clerk</td>
+                    <td>101</td>
+                    <th>Java</th>
+                    <th>10</th>
+                    <th>2-5-2023</th>
+                    <th>10-5-2023</th>
+                </tr>
+                <tr *ngFor="let tempIssuebook of issuebook">
+                    <td>{{tempIssuebook.sId}}</td>
+                    <td>{{tempIssuebook.sName}}</td>
+                    <td>{{tempIssuebook.bookid}}</td>
+                    <td>{{tempIssuebook.book_name}}</td>
+                    <td>{{tempIssuebook.quantity}}</td>
+                    <td>{{tempIssuebook.issue_date}}</td>
+                    <td>{{tempIssuebook.return_date}}</td>
+                    <!-- <button type="button" class="btn btn-md btn-success" (click)="updateIssuebook(tempIssuebook.sId)">Update</button>&nbsp;&nbsp; -->
+                    <button type="button" class="btn btn-md btn-danger" (click) = "deleteIssuebook(tempIssuebook.sId)">Delete </button>
+                </tr>
+            </table>
+            </div>
+            <button class="atu-btn-submit btn btn-info" (click) = "addIssuebook()" >Add Issue Book Details</button>
+        </div>
+      
+    </div>
+</div>

@@ -1,0 +1,74 @@
+
+<div class="page-wrapper">
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <!-- <div class="logo"> -->
+            <!-- <a href="#"> -->
+                <img src="assets/images/download.jpg" alt="XYZ Company" class="img-responsive" style="height: 70px;width: 200px;">
+            <!-- </a>
+        </div> -->
+        <div class="menu-sidebar-content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar-list">
+                    <li>
+                        <i class="fa fa-home" style='font-size:20px;color:red'><a href="http://localhost:4200/">Home</a></i>
+                      </li>
+                    <li>
+                      <i class='fas fa-book' style='font-size:20px;color:red'><a href="bookslist">Add Books</a></i>
+                    </li>
+                    <li>
+                      <i  class='fas fa-users' style='font-size:20px;color:red'><a href="studentslist">Add Students</a></i>
+                    </li>
+                    <!-- <li>
+                      <i  class='fas fa-user-tie' style='font-size:20px;color:red'> <a href="#">Add Staff</a></i>
+                    </li> -->
+                    <li>
+                      <i  class='fas fa-book-reader' style='font-size:20px;color:red'>  <a href="issuebookform">Issue Book</a></i>
+                    </li>
+                    <li>
+                      <i  class='fas fa-book' style='font-size:20px;color:red'> <a href="returnbookform">Return Book</a></i>
+                  </li>
+                  <li>
+                    <i  class='fas fa-sign-out-alt' style='font-size:20px;color:red'> <a href="http://localhost:4200/login">LogOut</a></i>
+                </li>
+                </ul>
+            </nav>
+        </div>
+   </aside>
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            
+            <div class="row">
+              <table class='table' style="border: 1px solid">
+                <thead>
+                    <tr class='table-dark'>
+                        <th>S_Id</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Branch</th>
+                    </tr>
+            
+                </thead>
+                <tr >
+                    <td>1</td>
+                    <td>Clerk</td>
+                    <td>Phaltan</td>
+                    <td>It</td>
+                </tr>
+                <tr *ngFor="let tempStudents of students">
+                    <td>{{tempStudents.sId}}</td>
+                    <td>{{tempStudents.sName}}</td>
+                    <td>{{tempStudents.address}}</td>
+                    <td>{{tempStudents.branch}}</td>
+                    <button type="button" class="btn btn-md btn-success" (click)="updateStudents(tempStudents.sId)">Update</button>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-md btn-danger" (click) = "deleteStudents(tempStudents.sId)">Delete </button> 
+                </tr>
+            </table>
+            </div>
+             <button class="atu-btn-submit btn btn-info" (click) = "addStudents()" >Add Students</button>
+        </div>
+      
+    </div>
+</div>
